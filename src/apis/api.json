@@ -1,0 +1,33 @@
+{
+    "menus": [
+        {
+            "uuid": "2c09324e-d4d6-4328-a33a-3efaef03a7a7",
+            "title": "Dados de login",
+            "screen": "./src/screens/OffersScreen"
+        },
+        {
+            "uuid": "37b49272-88e6-4240-8df4-4521a3fe893d",
+            "title": "Dados pessoais"
+        },
+        {
+            "uuid": "85b47892-da29-4f85-918c-55fba16f61cb",
+            "title": "Calendário menstrual"
+        },
+        {
+            "uuid": "e7e92a7e-b590-434e-8bd8-a9451178019b",
+            "title": "Medicação e consultas"
+        },
+        {
+            "uuid": "df3c7f3f-8874-472e-8a0f-a0088cf70163",
+            "title": "Relatórios"
+        },
+        {
+            "uuid": "63cbbf91-0236-47b5-92ee-d5efab2f6f30",
+            "title": "Perguntas frequentes"
+        },
+        {
+            "uuid": "63cbbf91-0236-47b5-92ee-d5efab2f6f30",
+            "title": "Clínicas de PMA"
+        }
+    ]
+}
