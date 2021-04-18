@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 
 const LogoImage = require('../../assets/logo.png');
 
-const Header = function() {
+const Header = function () {
     const navigation = useNavigation();
 
     return (
@@ -31,6 +31,7 @@ const Header = function() {
                     style={{
                         maxHeight: 50,
                         maxWidth: 150,
+                        alignItems: "center",
                         alignSelf: "center",
                     }}
                     source={LogoImage}
