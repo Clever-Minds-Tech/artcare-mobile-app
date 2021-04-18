@@ -10,7 +10,10 @@ const CredentialsSettingsScreen = ({
         <Header />
         <Content>
             <View>
-                <Text>CredentialsSettingsScreen</Text>
+                <Text style={{
+                    fontSize: 46,
+                    fontFamily: 'Arial'
+                }}>CredentialsSettingsScreen</Text>
             </View>
         </Content>
     </Container>

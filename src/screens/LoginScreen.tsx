@@ -5,7 +5,6 @@ import { LinearGradient } from 'expo-linear-gradient'
 
 const LogoImage = require('../../assets/logo.png');
 
-
 class Login extends React.Component {
     state = {
         email: '',
@@ -13,6 +12,7 @@ class Login extends React.Component {
     }
 
     handleLogin = () => {
+
         const { email, password } = this.state
 
         Firebase.auth()
