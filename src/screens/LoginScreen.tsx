@@ -42,13 +42,16 @@ class Login extends React.Component {
                         autoCapitalize='none'
                     />
                     <TextInput
-                        style={styles.inputBox}
+                        style={styles.inputBoxPassword}
                         value={this.state.password}
                         onChangeText={password => this.setState({ password })}
                         placeholder='PALAVRA-PASSE'
                         placeholderTextColor="#D4956E"
                         textAlign='left'
                         secureTextEntry={true}
+                        ref={ref => ref && ref.setNativeProps({ style: { fontFamily: 'Arial' } })}
+
+
                     />
                     <TouchableOpacity style={styles.buttonEntry} onPress={this.handleLogin}>
                         <Text style={styles.buttonText}>Entrar</Text>
@@ -90,35 +93,69 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
 
     },
-    inputBox: {
+    logo: {
+        marginTop: 95,
+        height: 120,
+        width: '100%',
+        resizeMode: 'contain',
+        alignContent: 'center'
 
+    },
+    inputBox: {
+        marginTop: 40,
+        marginLeft: 35,
+        marginRight: 35,
+        fontFamily: 'Arial',
+        fontWeight: 'bold',
         width: '85%',
         margin: 10,
-        padding: 15,
-        fontSize: 12,
+        fontSize: 11,
         borderColor: '#d1d2d3',
-        borderBottomWidth: 1,
+        borderBottomWidth: 2,
         textAlign: 'right',
+        paddingBottom: 3,
         color: 'black'
     },
-    buttonEntry: {
+    inputBoxPassword: {
+        marginTop: 30,
+        marginLeft: 35,
+        marginRight: 35,
+        paddingBottom: 3,
+        fontFamily: 'Arial',
         fontWeight: 'bold',
-        marginLeft: 25,
-        marginRight: 25,
-        marginTop: 60,
+        width: '85%',
+        margin: 10,
+        fontSize: 11,
+        borderColor: '#d1d2d3',
+        borderBottomWidth: 2,
+        textAlign: 'right',
+        color: 'black',
+
+
+    },
+    buttonEntry: {
+        fontFamily: 'Arial',
+        fontWeight: 'bold',
+        marginLeft: 35,
+        marginRight: 35,
+        marginTop: 30,
         marginBottom: 10,
         paddingVertical: 5,
         alignItems: 'center',
         backgroundColor: '#A92257',
-        borderRadius: 5,
+        borderRadius: 8,
         width: 330,
-        height: 45
+        height: 45,
+
 
     },
     buttonText: {
         fontSize: 20,
         fontWeight: 'bold',
         color: '#fff',
+        fontFamily: 'Arial',
+        alignContent: 'center'
+
 
     },
     buttonSignup: {
@@ -133,47 +170,46 @@ const styles = StyleSheet.create({
 
     },
     buttonCreate: {
+        fontFamily: 'Arial',
         fontWeight: 'bold',
-        marginLeft: 25,
-        marginRight: 25,
-        marginTop: 3,
+        marginLeft: 35,
+        marginRight: 35,
+        marginTop: 8,
         marginBottom: 20,
         paddingVertical: 5,
         alignItems: 'center',
         backgroundColor: '#D14C79',
-        borderRadius: 5,
+        borderRadius: 8,
         width: 330,
         height: 45
 
     },
     textLogin: {
-        fontStyle: 'normal',
-        marginLeft: 25,
-        marginRight: 25,
-        marginTop: 25,
-        fontSize: 15,
-        color: '#4E4E50',
+
+        marginLeft: 35,
+        marginRight: 35,
+        marginTop: 15,
+        fontSize: 12,
+        color: '#d1d2d3',
         alignItems: 'center',
         textAlign: 'center',
+        fontFamily: 'Arial',
+        textAlignVertical: 'center',
+        fontWeight: '100',
+        padding: 2,
+
 
 
     },
     textLoginUpper: {
-        marginLeft: 25,
-        marginRight: 25,
-        marginTop: 45,
+        marginLeft: 70,
+        marginRight: 70,
+        marginTop: 38,
         color: '#A92257',
         textAlign: 'center',
         fontWeight: 'bold',
-        fontSize: 13
-    },
-    logo: {
-        display: 'flex',
-        flexDirection: "column",
-        maxHeight: 100,
-        maxWidth: 100,
-        alignItems: 'center',
-        justifyContent: 'center'
+        fontSize: 10,
+        fontFamily: 'Arial',
 
     }
 
