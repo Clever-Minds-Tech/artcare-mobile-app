@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, TextInput, StyleSheet, TouchableOpacity, Text, Button } from 'react-native'
 import Firebase from '../../config/Firebase'
+import { Icon } from 'native-base'
 
 class Login extends React.Component {
     state = {
@@ -9,6 +10,7 @@ class Login extends React.Component {
     }
 
     handleLogin = () => {
+
         const { email, password } = this.state
 
         Firebase.auth()
