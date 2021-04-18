@@ -58,14 +58,14 @@ class Login extends React.Component {
                     </TouchableOpacity>
 
 
-                    <Text style={styles.textLogin}>Qualquer acesso não autorizado aos conteúdos desta</Text>
-                    <Text style={styles.textLogin}>aplicação viola o direito à privacidade dos indivíduos cuja</Text>
-                    <Text style={styles.textLogin}>informação aqui se encontra disponível, e sera passível das</Text>
-                    <Text style={styles.textLogin}>respetivas ações legais e disciplinares.</Text>
+                    <Text style={styles.textLogin}>Qualquer acesso não autorizado aos conteúdos desta
+                    aplicação viola o direito à privacidade dos indivíduos cuja
+                    informação aqui se encontra disponível, e sera passível das
+                   respetivas ações legais e disciplinares.</Text>
 
-                    <Text style={styles.textLogin}>Todo o profissional de saúde deve também estar consciente</Text>
-                    <Text style={styles.textLogin}>da confidencialidade de toda a informação clínica e que se</Text>
-                    <Text style={styles.textLogin}>encontra vinculado ao sigilo profissional.</Text>
+                    <Text style={styles.textLogin}>Todo o profissional de saúde deve também estar consciente
+                    da confidencialidade de toda a informação clínica e que se
+                  encontra vinculado ao sigilo profissional.</Text>
 
 
                     <Text style={styles.textLoginUpper}>TODOS OS ACESSOS, AUTORIZADOS OU NÃO, ASSIM COMO A NATUREZA DA INFORMAÇÃO ACEDIDA, SERÃO REGISTADOS.</Text>
@@ -86,32 +86,40 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
         paddingLeft: 10,
         paddingRight: 100,
-        paddingTop: 30
+        paddingTop: 30,
+        overflow: 'hidden',
+
     },
     inputBox: {
+
         width: '85%',
         margin: 10,
         padding: 15,
-        fontSize: 16,
+        fontSize: 12,
         borderColor: '#d1d2d3',
         borderBottomWidth: 1,
         textAlign: 'right',
         color: 'black'
     },
     buttonEntry: {
-        marginTop: 30,
+        fontWeight: 'bold',
+        marginLeft: 25,
+        marginRight: 25,
+        marginTop: 60,
         marginBottom: 10,
         paddingVertical: 5,
         alignItems: 'center',
         backgroundColor: '#A92257',
-
         borderRadius: 5,
-        width: 200
+        width: 330,
+        height: 45
+
     },
     buttonText: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: '#fff'
+        color: '#fff',
+
     },
     buttonSignup: {
         fontSize: 12
@@ -125,23 +133,39 @@ const styles = StyleSheet.create({
 
     },
     buttonCreate: {
+        fontWeight: 'bold',
+        marginLeft: 25,
+        marginRight: 25,
         marginTop: 3,
         marginBottom: 20,
         paddingVertical: 5,
         alignItems: 'center',
         backgroundColor: '#D14C79',
-
         borderRadius: 5,
-        width: 200
+        width: 330,
+        height: 45
 
     },
     textLogin: {
+        fontStyle: 'normal',
+        marginLeft: 25,
+        marginRight: 25,
+        marginTop: 25,
+        fontSize: 15,
+        color: '#4E4E50',
         alignItems: 'center',
         textAlign: 'center',
+
+
     },
     textLoginUpper: {
+        marginLeft: 25,
+        marginRight: 25,
+        marginTop: 45,
         color: '#A92257',
         textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 13
     },
     logo: {
         display: 'flex',
