@@ -2,6 +2,7 @@
 // https://aboutreact.com/custom-navigation-drawer-sidebar-with-image-and-icon-in-menu-options/
 
 import React from 'react';
+import { LinearGradient } from 'expo-linear-gradient'
 import {
   SafeAreaView,
   View,
@@ -16,6 +17,7 @@ import {
   DrawerItemList,
   DrawerItem,
 } from '@react-navigation/drawer';
+import { Header } from 'native-base';
 
 const CustomSidebarMenu = (props) => {
   const BASE_PATH =
@@ -23,14 +25,31 @@ const CustomSidebarMenu = (props) => {
   const proileImage = 'react_logo.png';
 
   return (
-    <SafeAreaView style={{flex: 1}}>
-      {/*Header menu area */}
-      <Image
-        source={require('./../../assets/logo.png')}
-        style={styles.sideMenuProfileIcon}
-      />
+
+    <SafeAreaView style={styles.container} >
+      <Header>
+
+        <LinearGradient start={{ x: 0, y: -1.2 }} end={{ x: 0, y: 0.2 }}
+          colors={['#A92257', 'white']}
+          style={styles.background}
+        >
+          <Image
+            source={require('./../../assets/logo.png')}
+            style={styles.sideMenuProfileIcon}
+          />
+
+        </LinearGradient>
+      </Header>
+
+
       <DrawerContentScrollView {...props}>
-        <DrawerItemList {...props} />
+        <DrawerItemList {...props}
+          activeTintColor='#A92257'
+          inactiveTintColor='#A92257'
+          labelStyle={styles.label}
+
+
+          itemStyle={styles.customList} />
       </DrawerContentScrollView>
 
     </SafeAreaView>
@@ -38,24 +57,51 @@ const CustomSidebarMenu = (props) => {
 };
 
 const styles = StyleSheet.create({
-  sideMenuProfileIcon: {
-    resizeMode: 'center',
-    width: 100,
-    height: 100,
-    borderRadius: 100 / 2,
+  container: {
+    flex: 1,
+    fontFamily: 'Arial',
+  },
+  label: {
+    fontFamily: 'Arial',
+    fontWeight: 'bold',
+    fontSize: 20,
+    marginTop: 2,
+    marginBottom: 7,
+    width: '100%',
+    justifyContent: 'center',
+    textAlignVertical: 'center',
     alignSelf: 'center',
-    paddingStart: 2
+    alignContent: 'center',
+
   },
-  iconStyle: {
-    width: 15,
-    height: 15,
-    marginHorizontal: 5,
+  sideMenuProfileIcon: {
+    marginTop: 10,
+    height: 40,
+    width: '100%',
+    resizeMode: 'contain',
+    alignContent: 'center'
+
   },
-  customItem: {
-    padding: 16,
-    flexDirection: 'row',
-    alignItems: 'center',
+
+  customList: {
+    justifyContent: 'center',
+    fontFamily: 'Arial',
+    fontWeight: 'bold',
+    width: '100%',
+    borderColor: '#EDEDED',
+    borderBottomWidth: 4,
+    textAlign: 'center',
+    textAlignVertical: 'center',
+
   },
+  background: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    height: 300,
+
+  }
 });
 
 export default CustomSidebarMenu;

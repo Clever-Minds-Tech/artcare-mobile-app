@@ -86,10 +86,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         textAlign: 'center',
-        paddingBottom: 10,
-        paddingLeft: 10,
-        paddingRight: 100,
-        paddingTop: 30,
+
         overflow: 'hidden',
 
     },
@@ -108,7 +105,6 @@ const styles = StyleSheet.create({
         fontFamily: 'Arial',
         fontWeight: 'bold',
         width: '85%',
-        margin: 10,
         fontSize: 11,
         borderColor: '#d1d2d3',
         borderBottomWidth: 2,
@@ -117,7 +113,7 @@ const styles = StyleSheet.create({
         color: 'black'
     },
     inputBoxPassword: {
-        marginTop: 30,
+        marginTop: 35,
         marginLeft: 35,
         marginRight: 35,
         paddingBottom: 3,
@@ -146,6 +142,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         width: 330,
         height: 45,
+        justifyContent: 'center',
 
 
     },
@@ -181,16 +178,19 @@ const styles = StyleSheet.create({
         backgroundColor: '#D14C79',
         borderRadius: 8,
         width: 330,
-        height: 45
+        height: 45,
+        justifyContent: 'center',
+        shadowColor: 'blue',
+        shadowOpacity: 10,
+        shadowOffset: { width: 30, height: 30 }
 
     },
     textLogin: {
-
         marginLeft: 35,
         marginRight: 35,
-        marginTop: 15,
+        marginTop: 12,
         fontSize: 12,
-        color: '#d1d2d3',
+        color: '#4E4E50',
         alignItems: 'center',
         textAlign: 'center',
         fontFamily: 'Arial',
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
     textLoginUpper: {
         marginLeft: 70,
         marginRight: 70,
-        marginTop: 38,
+        marginTop: 30,
         color: '#A92257',
         textAlign: 'center',
         fontWeight: 'bold',
