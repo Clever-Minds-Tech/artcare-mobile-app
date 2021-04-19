@@ -63,12 +63,12 @@ export default class App extends React.Component {
           >
             <Drawer.Screen name="Dados de login" component={CredentialsSettingsScreen} />
             <Drawer.Screen name="Dados pessoais" component={ProfileScreen} />
+            <Drawer.Screen name="Calendário menstrual" component={CalendarScreen} />
             <Drawer.Screen name="Medicações e consultas" component={AppointmentsScreen} />
             <Drawer.Screen name="Relatórios" component={ReportScreen} />
             <Drawer.Screen name="Perguntas frequentes" component={FAQScreen} />
             <Drawer.Screen name="Clínicas de PMA" component={PMAScreen} />
             <Drawer.Screen name="Sandbox Login" component={Login} />
-            <Drawer.Screen name="Calendário menstrual" component={CalendarScreen} />
           </Drawer.Navigator>
 
         </NavigationContainer>
