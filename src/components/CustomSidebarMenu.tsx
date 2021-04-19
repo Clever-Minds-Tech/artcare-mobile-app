@@ -5,11 +5,8 @@ import React from 'react';
 import { LinearGradient } from 'expo-linear-gradient'
 import {
   SafeAreaView,
-  View,
   StyleSheet,
   Image,
-  Text,
-  Linking,
 } from 'react-native';
 
 import {
@@ -20,19 +17,13 @@ import {
 import { Header, Container } from 'native-base';
 
 const CustomSidebarMenu = (props) => {
-  const BASE_PATH =
-    'https://raw.githubusercontent.com/AboutReact/sampleresource/master/';
-  const proileImage = 'react_logo.png';
-
   return (
-
     <SafeAreaView style={styles.container} >
       <Header style={
         {
           marginBottom: 75
         }
       }>
-
         <LinearGradient start={{ x: 0, y: -1.2 }} end={{ x: 0, y: 0.2 }}
           colors={['#A92257', 'white']}
           style={styles.background}
@@ -52,8 +43,7 @@ const CustomSidebarMenu = (props) => {
           activeBackgroundColor='white'
           labelStyle={styles.label}
           itemStyle={styles.customList} 
-          itemsContainerStyle={styles.itemsContainerStyle}
-          />
+        />
       </DrawerContentScrollView>
 
     </SafeAreaView>
@@ -78,18 +68,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     left: 20
   },
-  itemsContainerStyle: {
-
-  },
   sideMenuProfileIcon: {
     marginTop: 10,
-    height: 40,
+    height: 50,
     width: '100%',
     resizeMode: 'contain',
     alignContent: 'center',
-    
   },
-
   customList: {
     flex: 1,
     flexDirection: 'column',

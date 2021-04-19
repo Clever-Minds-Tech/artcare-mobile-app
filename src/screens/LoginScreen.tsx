@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         textAlign: 'center',
-
+        backgroundColor: 'white',
         overflow: 'hidden',
 
     },
@@ -105,12 +105,12 @@ const styles = StyleSheet.create({
         fontFamily: 'Arial',
         fontWeight: 'bold',
         width: '85%',
-        fontSize: 11,
+        fontSize: 24,
         borderColor: '#d1d2d3',
+        color: '#97999b',
         borderBottomWidth: 2,
         textAlign: 'right',
         paddingBottom: 3,
-        color: 'black'
     },
     inputBoxPassword: {
         marginTop: 35,
@@ -121,11 +121,11 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         width: '85%',
         margin: 10,
-        fontSize: 11,
+        fontSize: 24,
+        color: '#97999b',
         borderColor: '#d1d2d3',
         borderBottomWidth: 2,
         textAlign: 'right',
-        color: 'black',
 
 
     },
@@ -197,9 +197,6 @@ const styles = StyleSheet.create({
         textAlignVertical: 'center',
         fontWeight: '100',
         padding: 2,
-
-
-
     },
     textLoginUpper: {
         marginLeft: 70,
@@ -214,7 +211,7 @@ const styles = StyleSheet.create({
     },
     inputLabel: {
         position: 'relative',
-        top: 50,
+        top: 65,
         left: 35,
         fontFamily: 'Arial',
         fontWeight: 'bold',

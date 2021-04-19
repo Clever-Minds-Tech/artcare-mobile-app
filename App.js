@@ -67,6 +67,7 @@ export default class App extends React.Component {
             <Drawer.Screen name="Relatórios" component={ReportScreen} />
             <Drawer.Screen name="Perguntas frequentes" component={FAQScreen} />
             <Drawer.Screen name="Clínicas de PMA" component={PMAScreen} />
+            <Drawer.Screen name="Sandbox Login" component={Login} />
           </Drawer.Navigator>
 
         </NavigationContainer>
