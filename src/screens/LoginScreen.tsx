@@ -2,6 +2,7 @@ import React from 'react'
 import { View, TextInput, StyleSheet, TouchableOpacity, Text, Button, Image } from 'react-native'
 import Firebase from '../../config/Firebase'
 import { LinearGradient } from 'expo-linear-gradient'
+import { Label, Form } from 'native-base';
 
 const LogoImage = require('../../assets/logo.png');
 
@@ -31,47 +32,46 @@ class Login extends React.Component {
                     <Image style={styles.logo}
                         source={LogoImage}
                     />
-
-                    <TextInput
-                        style={styles.inputBox}
-                        value={this.state.email}
-                        onChangeText={email => this.setState({ email })}
-                        placeholder='EMAIL'
-                        placeholderTextColor="#D4956E"
-                        textAlign='left'
-                        autoCapitalize='none'
-                    />
-                    <TextInput
-                        style={styles.inputBoxPassword}
-                        value={this.state.password}
-                        onChangeText={password => this.setState({ password })}
-                        placeholder='PALAVRA-PASSE'
-                        placeholderTextColor="#D4956E"
-                        textAlign='left'
-                        secureTextEntry={true}
-                        ref={ref => ref && ref.setNativeProps({ style: { fontFamily: 'Arial' } })}
+                    <Form>
+                        <Label style={styles.inputLabel}>EMAIL</Label>
+                        <TextInput
+                            style={styles.inputBox}
+                            value={this.state.email}
+                            onChangeText={email => this.setState({ email })}
+                            textAlign='right'
+                            autoCapitalize='none'
+                        />
+                        <Label style={styles.inputLabel}>PALAVRA-PASSE</Label>
+                        <TextInput
+                            style={styles.inputBoxPassword}
+                            value={this.state.password}
+                            onChangeText={password => this.setState({ password })}
+                            textAlign='right'
+                            secureTextEntry={true}
+                            ref={ref => ref && ref.setNativeProps({ style: { fontFamily: 'Arial' } })}
 
 
-                    />
-                    <TouchableOpacity style={styles.buttonEntry} onPress={this.handleLogin}>
-                        <Text style={styles.buttonText}>Entrar</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.buttonCreate} onPress={this.handleLogin}>
-                        <Text style={styles.buttonText}>Criar Conta</Text>
-                    </TouchableOpacity>
+                        />
+                        <TouchableOpacity style={styles.buttonEntry} onPress={this.handleLogin}>
+                            <Text style={styles.buttonText}>Entrar</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.buttonCreate} onPress={this.handleLogin}>
+                            <Text style={styles.buttonText}>Criar Conta</Text>
+                        </TouchableOpacity>
+                    </Form>
 
 
-                    <Text style={styles.textLogin}>Qualquer acesso não autorizado aos conteúdos desta
-                    aplicação viola o direito à privacidade dos indivíduos cuja
-                    informação aqui se encontra disponível, e sera passível das
-                   respetivas ações legais e disciplinares.</Text>
+                    <Text style={styles.textLogin}>
+                        Qualquer acesso não autorizado aos conteúdos desta aplicação viola o direito à privacidade dos indivíduos cuja informação aqui se encontra disponível, e sera passível das respetivas ações legais e disciplinares.
+                   </Text>
 
-                    <Text style={styles.textLogin}>Todo o profissional de saúde deve também estar consciente
-                    da confidencialidade de toda a informação clínica e que se
-                  encontra vinculado ao sigilo profissional.</Text>
+                    <Text style={styles.textLogin}>
+                        Todo o profissional de saúde deve também estar consciente da confidencialidade de toda a informação clínica e que se encontra vinculado ao sigilo profissional.
+                    </Text>
 
-
-                    <Text style={styles.textLoginUpper}>TODOS OS ACESSOS, AUTORIZADOS OU NÃO, ASSIM COMO A NATUREZA DA INFORMAÇÃO ACEDIDA, SERÃO REGISTADOS.</Text>
+                    <Text style={styles.textLoginUpper}>
+                        TODOS OS ACESSOS, AUTORIZADOS OU NÃO, ASSIM COMO A NATUREZA DA INFORMAÇÃO ACEDIDA, SERÃO REGISTADOS.
+                    </Text>
                 </LinearGradient>
             </View>
         )
@@ -211,7 +211,16 @@ const styles = StyleSheet.create({
         fontSize: 10,
         fontFamily: 'Arial',
 
-    }
+    },
+    inputLabel: {
+        position: 'relative',
+        top: 50,
+        left: 35,
+        fontFamily: 'Arial',
+        fontWeight: 'bold',
+        fontSize: 12,
+        color: '#D4956E'
+    },
 
 })
 
