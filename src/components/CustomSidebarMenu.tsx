@@ -14,7 +14,7 @@ import {
   DrawerItemList,
   DrawerItem,
 } from '@react-navigation/drawer';
-import { Header, Container } from 'native-base';
+import { Header, Icon, Left, Right, Button } from 'native-base';
 
 const CustomSidebarMenu = (props) => {
   return (
@@ -32,10 +32,16 @@ const CustomSidebarMenu = (props) => {
             source={require('./../../assets/logo.png')}
             style={styles.sideMenuProfileIcon}
           />
+          <Left>
+            <Button
+              transparent
+            // onPress={() => navigation.goBack()}
+            >
+              <Icon name="close" style={styles.iconClose} />
+            </Button>
+          </Left>
         </LinearGradient>
       </Header>
-      <></>
-
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props}
           activeTintColor='#A92257'
@@ -67,6 +73,19 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     alignItems: 'center',
     left: 20
+  },
+  iconClose: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginLeft: 330,
+    fontFamily: 'Arial',
+    color: '#A92257',
+    fontSize: 40,
+    fontWeight: 'bold',
+    borderRadius: 80,
+    top: -48,
+    position: 'relative',
+    backgroundColor: 'transparent',
   },
   sideMenuProfileIcon: {
     marginTop: 10,
