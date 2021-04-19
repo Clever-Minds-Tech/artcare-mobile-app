@@ -25,30 +25,21 @@ import { faCheckSquare, faCoffee } from '@fortawesome/fontawesome-free-solid'
 />
  */
 
-function padding(a, b, c, d) {
-    return {
-      paddingTop: a,
-      paddingRight: b ? b : a,
-      paddingBottom: c ? c : a,
-      paddingLeft: d ? d : (b ? b : a)
-    }
-  }
 //definição icones do calendario menstrual
 //const medicineCalendarIcon = {key:'medicine', color: '#4B67D1', src:"", width:""}; // medicação
-const breastCalendarIcon = { key: 'breast', src: "", width: 12, height: 12, position: "" }; //ícone da mama
+const breastCalendarIcon = { key: 'breast', src: "", width: 8, height: 8, position: "" }; //ícone da mama
 const breastIcon = { uri: "https://cdn4.iconfinder.com/data/icons/materia-anatomy/24/028_032_tit_boobs_mother_biology_anatomy_medicine-512.png" };
-const tpmCalendarIcon = { key: 'tpm', color: '#EE9838', width: 12, height: 8 }; // raio tpm icon
+const tpmCalendarIcon = { key: 'tpm', color: '#EE9838', width: 8, height: 8 }; // raio tpm icon
 const tpmcolor = '#EE9838';
-const secretionCalendarIcon = { key: 'secretion', color: '#67E3EF', width: 12, height: 8 }; // secreção
-const heartCalendarIcon = { key: 'heart', color: '#F0668C', width: 12, height: 12, margin: 2 }; //source={ //require('https://upload.wikimedia.org/wikipedia/commons/c/c8/Love_Heart_symbol.svg') } }; // relação sexual
+const secretionCalendarIcon = { key: 'secretion', color: '#67E3EF', width: 8, height: 8 }; // secreção
+const heartCalendarIcon = { key: 'heart', color: '#F0668C', width: 8, height: 8, margin: 2 }; //source={ //require('https://upload.wikimedia.org/wikipedia/commons/c/c8/Love_Heart_symbol.svg') } }; // relação sexual
 const ovulationCalendarIcon = { key: 'ovulation', selectedDotColor: '#4BD1A4' }; //ovulação
 const menstruationPredictCalendarIcon = { key: 'predmestruation', color: '#EEBCCD' }; //previsão próxima menstruação
 const lessMenstruationCalendarIcon = { key: 'lessmenstruation', selectedDotColor: '#EEBCCD' }; //menstruação fluxo menor
 const menstruationCalendarIcon = { key: 'menstruation', selectedDotColor: '#EEBCCD' }; //menstruação fluxo normal
-const spottedCalendarIcon = { key: 'spotted', color: "transparent", selectedDotColor: '#E290AB', width: 12, height: 12, margin: 1 }; //menstruação fluxo normal
+const spottedCalendarIcon = { key: 'spotted', color: "transparent", selectedDotColor: '#E290AB', width: 8, height: 8, margin: 1 }; //menstruação fluxo normal
 const fertilPeriodCalendarIcon = { key: "fertilperiod", color: "#4BD1A4" } //cor da data
 const today = { key: "today", fontWeight: 'bold', backgroundColor: 'white' }
-const monthTitle = {key: "monthTitle", fontWeight: "bold", color:"#A92257", margin:10, fontSize:16}
 
 export const customImage = {
     container: {
@@ -71,19 +62,13 @@ const CalendarScreen = ({
                 <FontAwesome name="heart" style={heartCalendarIcon} />
 
                 <View>
-                    <Text style={monthTitle}>
-                    <FontAwesome name="calendar" style={monthTitle} />
-                        Abril
-                        <Text> 2021</Text>
-                        </Text>
+
 
                     <CalendarList
                         markingType={'custom'}
                         theme={{
                             //backgroundColor: "#EDEDED",
                             calendarBackground: "#EDEDED",
-                            monthTextColor: "#EDEDED",
-                            textSectionTitleColor: "#000000"
                             //   selectedDayBackgroundColor: "#ffffff",
                             
 

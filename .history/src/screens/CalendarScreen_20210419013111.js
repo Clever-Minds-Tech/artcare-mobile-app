@@ -48,7 +48,7 @@ const menstruationCalendarIcon = { key: 'menstruation', selectedDotColor: '#EEBC
 const spottedCalendarIcon = { key: 'spotted', color: "transparent", selectedDotColor: '#E290AB', width: 12, height: 12, margin: 1 }; //menstruação fluxo normal
 const fertilPeriodCalendarIcon = { key: "fertilperiod", color: "#4BD1A4" } //cor da data
 const today = { key: "today", fontWeight: 'bold', backgroundColor: 'white' }
-const monthTitle = {key: "monthTitle", fontWeight: "bold", color:"#A92257", margin:10, fontSize:16}
+const monthTitle = {key: "monthTitle", fontWeight: "bold", color:"#A92257", margin:10, size:24}
 
 export const customImage = {
     container: {
@@ -73,9 +73,7 @@ const CalendarScreen = ({
                 <View>
                     <Text style={monthTitle}>
                     <FontAwesome name="calendar" style={monthTitle} />
-                        Abril
-                        <Text> 2021</Text>
-                        </Text>
+                        Abril</Text>
 
                     <CalendarList
                         markingType={'custom'}

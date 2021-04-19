@@ -73,9 +73,7 @@ const CalendarScreen = ({
                 <View>
                     <Text style={monthTitle}>
                     <FontAwesome name="calendar" style={monthTitle} />
-                        Abril
-                        <Text> 2021</Text>
-                        </Text>
+                        Abril</Text>
 
                     <CalendarList
                         markingType={'custom'}
