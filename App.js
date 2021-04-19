@@ -30,7 +30,7 @@ export default class App extends React.Component {
     await Font.loadAsync({
       Roboto: require('native-base/Fonts/Roboto.ttf'),
       Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
-      Arial:  require('./assets/fonts/arial.ttf'),
+      Arial: require('./assets/fonts/arial.ttf'),
       ...Ionicons.font,
     });
     this.setState({ fontsLoaded: true });
@@ -45,29 +45,26 @@ export default class App extends React.Component {
       return <Login />
     }
 
-    
+
     const Drawer = createDrawerNavigator();
 
     return (
       <SafeAreaProvider>
         <NavigationContainer>
-          <Drawer.Navigator 
-          initialRouteName="Home"
-          navigationOptions= {{
-            headerStyle: {
-              backgroundColor: '#f4511e',
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              color: 'white',
-            },
-          }}
-          drawerStyle={{
-            backgroundColor: '#FDEBED',
-            width: '100%',
-          }}
-          drawerType="back"
-          drawerContent={(props) => <CustomSidebarMenu {...props} />}>
+          <Drawer.Navigator
+            initialRouteName="Home"
+            navigationOptions={{
+
+
+            }}
+            drawerStyle={{
+              backgroundColor: 'white',
+              width: '100%',
+
+            }}
+            drawerType="back"
+
+            drawerContent={(props) => <CustomSidebarMenu {...props} />}>
             <Drawer.Screen name="Dados de login" component={CredentialsSettingsScreen} />
             <Drawer.Screen name="Dados pessoais" component={ProfileScreen} />
             <Drawer.Screen name="Calendário menstrual" component={CalendarScreen} />
@@ -75,7 +72,7 @@ export default class App extends React.Component {
             <Drawer.Screen name="Relatórios" component={ReportScreen} />
             <Drawer.Screen name="Perguntas frequentes" component={FAQScreen} />
             <Drawer.Screen name="Clínicas de PMA" component={PMAScreen} />
-            
+
           </Drawer.Navigator>
 
         </NavigationContainer>
