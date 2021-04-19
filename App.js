@@ -53,17 +53,12 @@ export default class App extends React.Component {
         <NavigationContainer>
           <Drawer.Navigator
             initialRouteName="Home"
-            navigationOptions={{
-
-
-            }}
             drawerStyle={{
               backgroundColor: 'white',
-              width: '100%',
+              minWidth: '100%'
 
             }}
             drawerType="back"
-
             drawerContent={(props) => <CustomSidebarMenu {...props} />}>
             <Drawer.Screen name="Dados de login" component={CredentialsSettingsScreen} />
             <Drawer.Screen name="Dados pessoais" component={ProfileScreen} />
@@ -72,7 +67,6 @@ export default class App extends React.Component {
             <Drawer.Screen name="Relatórios" component={ReportScreen} />
             <Drawer.Screen name="Perguntas frequentes" component={FAQScreen} />
             <Drawer.Screen name="Clínicas de PMA" component={PMAScreen} />
-
           </Drawer.Navigator>
 
         </NavigationContainer>

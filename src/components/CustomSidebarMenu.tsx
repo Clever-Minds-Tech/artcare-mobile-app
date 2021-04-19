@@ -17,7 +17,7 @@ import {
   DrawerItemList,
   DrawerItem,
 } from '@react-navigation/drawer';
-import { Header } from 'native-base';
+import { Header, Container } from 'native-base';
 
 const CustomSidebarMenu = (props) => {
   const BASE_PATH =
@@ -27,7 +27,11 @@ const CustomSidebarMenu = (props) => {
   return (
 
     <SafeAreaView style={styles.container} >
-      <Header>
+      <Header style={
+        {
+          marginBottom: 75
+        }
+      }>
 
         <LinearGradient start={{ x: 0, y: -1.2 }} end={{ x: 0, y: 0.2 }}
           colors={['#A92257', 'white']}
@@ -37,19 +41,19 @@ const CustomSidebarMenu = (props) => {
             source={require('./../../assets/logo.png')}
             style={styles.sideMenuProfileIcon}
           />
-
         </LinearGradient>
       </Header>
-
+      <></>
 
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props}
           activeTintColor='#A92257'
           inactiveTintColor='#A92257'
+          activeBackgroundColor='white'
           labelStyle={styles.label}
-
-
-          itemStyle={styles.customList} />
+          itemStyle={styles.customList} 
+          itemsContainerStyle={styles.itemsContainerStyle}
+          />
       </DrawerContentScrollView>
 
     </SafeAreaView>
@@ -60,6 +64,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     fontFamily: 'Arial',
+    width: '100%',
+    textAlign: 'center'
   },
   label: {
     fontFamily: 'Arial',
@@ -68,10 +74,11 @@ const styles = StyleSheet.create({
     marginTop: 2,
     marginBottom: 7,
     width: '100%',
-    justifyContent: 'center',
-    textAlignVertical: 'center',
-    alignSelf: 'center',
-    alignContent: 'center',
+    textAlign: 'center',
+    alignItems: 'center',
+    left: 20
+  },
+  itemsContainerStyle: {
 
   },
   sideMenuProfileIcon: {
@@ -79,20 +86,20 @@ const styles = StyleSheet.create({
     height: 40,
     width: '100%',
     resizeMode: 'contain',
-    alignContent: 'center'
-
+    alignContent: 'center',
+    
   },
 
   customList: {
-    justifyContent: 'center',
+    flex: 1,
+    flexDirection: 'column',
     fontFamily: 'Arial',
     fontWeight: 'bold',
-    width: '100%',
+    width: '85%',
     borderColor: '#EDEDED',
     borderBottomWidth: 4,
-    textAlign: 'center',
-    textAlignVertical: 'center',
-
+    alignContent: 'center',
+    left: 20
   },
   background: {
     position: 'absolute',
@@ -100,7 +107,6 @@ const styles = StyleSheet.create({
     right: 0,
     top: 0,
     height: 300,
-
   }
 });
 
