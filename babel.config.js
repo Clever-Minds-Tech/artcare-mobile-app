@@ -1,4 +1,16 @@
 // @generated: @expo/next-adapter@2.1.39
 // Learn more: https://github.com/expo/expo/blob/master/docs/pages/versions/unversioned/guides/using-nextjs.md#shared-steps
 
-module.exports = { presets: ['@expo/next-adapter/babel'] };
+module.exports = { 
+    presets: ['@expo/next-adapter/babel', 'babel-preset-expo', 'module:metro-react-native-babel-preset'],
+    plugins: [
+        ["module:react-native-dotenv", {
+          "moduleName": "@env",
+          "path": ".env",
+          "blacklist": null,
+          "whitelist": null,
+          "safe": false,
+          "allowUndefined": true
+        }]
+      ]
+};
