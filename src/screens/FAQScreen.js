@@ -11,14 +11,11 @@ console.log(questionList);
 const FAQScreen = ({
     params,
 }) => {
+    const [activeIndex, setActiveIndex] = useState(-1)
 
-    const activeStyle = function () {
-        return {
-            display: 'flex',
-        }
-    }
     const openAnswer = (index) => {
         console.log(index)
+        setActiveIndex(index)
 
     }
     return (
@@ -33,11 +30,12 @@ const FAQScreen = ({
                     {
                         questionList.items.map(item => {
                             return (
-                                < React.Fragment key={item.index}>
+                                <React.Fragment key={item.index}>
                                     <Text onPress={() => openAnswer(item.index)} style={styles.textQuestion}>{item.question}</Text>
                                     <Icon type="FontAwesome" name="chevron-right" style={styles.iconChevron} />
-                                    {<Text style={styles.textAnswer}>{item.answer}</Text>}
-                                </ React.Fragment>
+                                    
+                                    <Text className={activeIndex == item.index ? 'answerActive' : 'textAnswer'} style={styles.textAnswer}>{item.answer}</Text>
+                                </React.Fragment>
 
                             )
                         })
