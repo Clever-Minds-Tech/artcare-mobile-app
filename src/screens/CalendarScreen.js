@@ -3,40 +3,13 @@ import { Text, View, StyleSheet } from 'react-native';
 import { Container, Content, Icon } from 'native-base';
 import Header from '../layout/Header';
 import { FontAwesome } from '@expo/vector-icons';
-import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
+import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 
 const tpmCalendarIcon = { key: 'tpm', color: '#EE9838', fontSize: 60 }; // raio tpm icon
 const heartCalendarIcon = { key: 'heart', color: '#F0668C', fontSize: 60 }; //source={ //require('https://upload.wikimedia.org/wikipedia/commons/c/c8/Love_Heart_symbol.svg') } }; // relao sexual
 
 
-const styles = StyleSheet.create({
-    container: {
-        flexDirection: 'row',
-        marginVertical: 10
-    },
-    dateIcon: {
-        top: 4,
-        fontWeight: "bold", 
-        color: "#A92257", 
-        marginHorizontal: 10, 
-        fontSize: 16,
-        width: 20
-    },
-    dateMonth: {
-        fontWeight: "bold", 
-        color: "#A92257", 
-        fontSize: 16,
-        marginHorizontal: 3, 
-        width: 55
-    },
-    dateYear: {
-        fontWeight: "bold", 
-        color: "#A92257", 
-        fontSize: 16,
-        marginHorizontal: 0, 
-        width: 120
-    }
-});
+
 
 const CalendarScreen = ({
     params,
@@ -49,6 +22,8 @@ const CalendarScreen = ({
                     <FontAwesome name="calendar" style={styles.dateIcon} />
                     <Text style={styles.dateMonth}>Abril</Text>
                     <Text style={styles.dateYear}>2021</Text>
+                    <Text style={styles.dateCicle}>INÍCIO DO CICLO: 01/02/2021</Text>
+
                 </View>
                 <CalendarList
                     markingType={'custom'}
@@ -56,7 +31,7 @@ const CalendarScreen = ({
                         calendarBackground: "#EDEDED",
                         monthTextColor: "#EDEDED",
                         textSectionTitleColor: "#000000"
-                        
+
 
                     }}
                     horizontal={true}
@@ -198,13 +173,121 @@ const CalendarScreen = ({
                         },
                     }}
                 ></CalendarList>
-                <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-around', marginTop: 50}}>
+                {/* <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-around', marginTop: 50 }}>
                     <FontAwesome name="bolt" style={tpmCalendarIcon} />
                     <FontAwesome name="heart" style={heartCalendarIcon} />
+                </View> */}
+                <View style={styles.containerDown}>
+
+                    <Text style={styles.prediction}>PREVISÕES</Text>
+
+
+                    <Icon type="FontAwesome" name="spinner" style={styles.icon} />
+                    <Text style={styles.boxPrediction}>OVULAÇÃO</Text>
+
+                    <Text style={styles.boxPrediction}>PERÍODO FÉRTIL</Text>
+                    <Icon type="FontAwesome" name="ellipsis-h" style={styles.icon} />
+                    <Text style={styles.boxPrediction}>PRÓXIMA MENSTRUAÇÃO</Text>
+
+
+
+                    <Text style={styles.titleSymptoms}>ADICIONAR SINTOMA</Text>
+
+
+
+                    <Icon type="FontAwesome" name="heart" style={styles.iconHeart} />
+                    <Text style={styles.boxSymptoms}>SEXO SEM PROTEÇÃO</Text>
+                    <Icon type="FontAwesome" name="heart" style={styles.iconHeartLine} />
+                    <Text style={styles.boxSymptoms}>SEXO COM PROTEÇÃO</Text>
+                    <Icon type="FontAwesome" name="tint" style={styles.icon} />
+                    <Text style={styles.boxSymptoms}>SECREÇÃO TRANSPARENTE</Text>
+                    <Icon type="FontAwesome" name="circle" style={styles.icon} />
+                    <Text style={styles.boxSymptoms}>MAMAS SENSÍVEIS</Text>
+
+                    <Text style={styles.boxSymptoms}>FLUXO NORMAL</Text>
+                    <Text style={styles.boxSymptoms}>POUCO FLUXO</Text>
+                    <Text style={styles.boxSymptoms}>SPOTTING</Text>
+
+                    <Icon type="FontAwesome" name="bolt" style={styles.icon} />
+                    <Text style={styles.boxSymptoms}>CÓLICA</Text>
                 </View>
             </View>
         </Content>
     </Container>
 );
+
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: 'row',
+        marginVertical: 10
+    },
+    dateIcon: {
+        top: 4,
+        fontWeight: "bold",
+        color: "#A92257",
+        marginHorizontal: 10,
+        fontSize: 16,
+        width: 20
+    },
+    dateMonth: {
+        fontWeight: "bold",
+        color: "#A92257",
+        fontSize: 16,
+        marginHorizontal: 3,
+        width: 55
+    },
+    dateYear: {
+        color: "#A92257",
+        fontSize: 16,
+        marginHorizontal: 0,
+        width: 120
+    },
+    dateCicle: {
+        top: 7,
+        fontFamily: 'Arial',
+        color: '#666460',
+        fontSize: 11,
+
+    },
+    containerDown: {
+        fontFamily: 'Arial',
+        marginTop: 10,
+        marginBottom: 5,
+    },
+    prediction: {
+        fontFamily: 'Arial',
+        fontWeight: 'bold',
+        color: '#666460',
+        textAlign: 'center',
+        fontSize: 18,
+    },
+    boxPrediction: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        fontFamily: 'Arial',
+        fontWeight: 'bold',
+        color: '#666460',
+        fontSize: 11,
+    },
+    titleSymptoms: {
+        fontFamily: 'Arial',
+        fontWeight: 'bold',
+        color: '#A92257',
+        textAlign: 'center',
+        fontSize: 18,
+    },
+    boxSymptoms: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        fontFamily: 'Arial',
+        fontWeight: 'bold',
+        color: '#666460',
+        fontSize: 11,
+    },
+
+
+});
 
 export default CalendarScreen;
