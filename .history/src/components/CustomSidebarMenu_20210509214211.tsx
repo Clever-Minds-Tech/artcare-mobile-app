@@ -54,12 +54,14 @@ const CustomSidebarMenu = (props) => {
           itemStyle={styles.customList} 
         />
         <DrawerItem
-          label="Relatórios"
-          activeTintColor='#A92257'
-          inactiveTintColor='#A92257'
-          activeBackgroundColor='white'
-          labelStyle={styles.label}
-          
+          label="Website"
+          inactiveTintColor={'blue'}
+          labelStyle= {{
+            fontFamily: 'Arial',
+            fontSize: 18,
+            textTransform: 'uppercase',
+            paddingTop: 5
+          }}
           onPress={() => Linking.openURL('http://www.example.com')}
         />
       </DrawerContentScrollView>
