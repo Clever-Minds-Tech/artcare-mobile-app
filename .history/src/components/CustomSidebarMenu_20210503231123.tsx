@@ -15,9 +15,6 @@ import {
   DrawerItem,
 } from '@react-navigation/drawer';
 import { Header, Icon, Left, Right, Button } from 'native-base';
-import { Linking } from 'react-native';
-
-
 
 const CustomSidebarMenu = (props) => {
   return (
@@ -52,15 +49,6 @@ const CustomSidebarMenu = (props) => {
           activeBackgroundColor='white'
           labelStyle={styles.label}
           itemStyle={styles.customList} 
-        />
-        <DrawerItem
-          label="Relatórios"
-          activeTintColor='#A92257'
-          inactiveTintColor='#A92257'
-          activeBackgroundColor='white'
-          labelStyle={styles.label}
-          
-          onPress={() => Linking.openURL('http://www.example.com')}
         />
       </DrawerContentScrollView>
 
