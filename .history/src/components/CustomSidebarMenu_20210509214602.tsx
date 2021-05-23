@@ -54,7 +54,7 @@ const CustomSidebarMenu = (props) => {
           itemStyle={styles.customList} 
         />
         <DrawerItem
-          label="RelatÃ³rios"
+          label="Relatórios"
           activeTintColor='#A92257'
           inactiveTintColor='#A92257'
           activeBackgroundColor='white'

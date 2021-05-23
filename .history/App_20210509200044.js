@@ -15,11 +15,12 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Login from './src/screens/LoginScreen';
 import Signup from './src/screens/SignupScreen';
 import CustomSidebarMenu from './src/components/CustomSidebarMenu';
-//import * as Linking from 'expo-linking';
-import {DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
-import { Linking } from 'react-native';
-export default class App extends React.Component {
+import * as Linking from 'expo-linking';
 
+export default class App extends React.Component {
+  _handleOpenWithLinking = () => {
+    Linking.openURL('https://expo.io');
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -68,6 +69,7 @@ export default class App extends React.Component {
             <Drawer.Screen name="Dados pessoais" component={ProfileScreen} />
             <Drawer.Screen name="Calendário menstrual" component={CalendarScreen} />
             <Drawer.Screen name="Medicações e consultas" component={AppointmentsScreen} />
+            <Button onPress={this._handleOpenWithLinking} name="Relatórios"  />
             <Drawer.Screen name="Perguntas frequentes" component={FAQScreen} />
             <Drawer.Screen name="Clínicas de PMA" component={PMAScreen} />
             <Drawer.Screen name="Sandbox Login" component={Login} />
