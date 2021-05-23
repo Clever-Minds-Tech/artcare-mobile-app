@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import { Container, Content, Icon } from 'native-base';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Container, Content, Icon, Button } from 'native-base';
 import Header from '../layout/Header';
 import { FontAwesome } from '@expo/vector-icons';
 import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
@@ -42,7 +42,7 @@ const CalendarScreen = ({
                                 container: {
                                     borderBottomEndRadius: 0,
                                     borderColor: "#EEBCCD",
-                                    borderRadius: 0,
+                                    borderRadius: 3,
                                     borderBottomWidth: 4
                                 },
                                 selected: true
@@ -53,7 +53,7 @@ const CalendarScreen = ({
                                 container: {
                                     borderBottomEndRadius: 0,
                                     borderColor: "#E290AB",
-                                    borderRadius: 0,
+                                    borderRadius: 3,
                                     borderBottomWidth: 4
                                 },
                                 selected: true
@@ -181,35 +181,71 @@ const CalendarScreen = ({
 
                     <Text style={styles.prediction}>PREVISÕES</Text>
 
+                    <View style={styles.containerBoxPrediction} >
 
-                    <Icon type="FontAwesome" name="spinner" style={styles.icon} />
-                    <Text style={styles.boxPrediction}>OVULAÇÃO</Text>
-
-                    <Text style={styles.boxPrediction}>PERÍODO FÉRTIL</Text>
-                    <Icon type="FontAwesome" name="ellipsis-h" style={styles.icon} />
-                    <Text style={styles.boxPrediction}>PRÓXIMA MENSTRUAÇÃO</Text>
+                        <Icon type="FontAwesome" name="spinner" style={styles.icon} />
+                        <Text style={styles.daysPrediction} >Dias</Text>
+                        <Icon type="FontAwesome" name="ellipsis-h" style={styles.icon} />
 
 
 
+                    </View>
+                    <View style={styles.containerBoxPrediction}>
+
+                        <Text style={styles.boxPrediction} >OVULAÇÃO</Text>
+
+                        <Text style={styles.boxPrediction}>PERÍODO FÉRTIL</Text>
+
+                        <Text style={styles.boxPrediction}>PRÓXIMA MENSTRUAÇÃO</Text>
+
+
+                    </View>
                     <Text style={styles.titleSymptoms}>ADICIONAR SINTOMA</Text>
 
+                    <View style={styles.containerBoxSymptoms} >
+
+                        <TouchableOpacity style={styles.buttonSymptoms}>
+                            <Icon type="FontAwesome" name="heart" style={styles.iconSymptoms} />
+                            <Text style={styles.boxSymptoms}>SEXO SEM PROTEÇÃO</Text>
+                        </TouchableOpacity>
 
 
-                    <Icon type="FontAwesome" name="heart" style={styles.iconHeart} />
-                    <Text style={styles.boxSymptoms}>SEXO SEM PROTEÇÃO</Text>
-                    <Icon type="FontAwesome" name="heart" style={styles.iconHeartLine} />
-                    <Text style={styles.boxSymptoms}>SEXO COM PROTEÇÃO</Text>
-                    <Icon type="FontAwesome" name="tint" style={styles.icon} />
-                    <Text style={styles.boxSymptoms}>SECREÇÃO TRANSPARENTE</Text>
-                    <Icon type="FontAwesome" name="circle" style={styles.icon} />
-                    <Text style={styles.boxSymptoms}>MAMAS SENSÍVEIS</Text>
+                        <TouchableOpacity style={styles.buttonSymptoms}>
+                            <Icon type="FontAwesome" name="heart" style={styles.iconSymptoms} />
+                            <Text style={styles.boxSymptoms}>SEXO COM PROTEÇÃO</Text>
+                        </TouchableOpacity>
 
-                    <Text style={styles.boxSymptoms}>FLUXO NORMAL</Text>
-                    <Text style={styles.boxSymptoms}>POUCO FLUXO</Text>
-                    <Text style={styles.boxSymptoms}>SPOTTING</Text>
+                        <TouchableOpacity style={styles.buttonSymptoms}>
+                            <Icon type="FontAwesome" name="tint" style={styles.iconSymptoms} />
+                            <Text style={styles.boxSymptoms}>SECREÇÃO TRANSPARENTE</Text>
+                        </TouchableOpacity>
 
-                    <Icon type="FontAwesome" name="bolt" style={styles.icon} />
-                    <Text style={styles.boxSymptoms}>CÓLICA</Text>
+                        <TouchableOpacity style={styles.buttonSymptoms}>
+                            <Icon type="FontAwesome" name="circle" style={styles.iconSymptoms} />
+                            <Text style={styles.boxSymptoms}>MAMAS SENSÍVEIS</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.buttonSymptoms}>
+                            <Icon type="FontAwesome" name="circle" style={styles.iconSymptoms} />
+                            <Text style={styles.boxSymptoms}>FLUXO NORMAL</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.buttonSymptoms}>
+                            <Icon type="FontAwesome" name="circle" style={styles.iconSymptoms} />
+                            <Text style={styles.boxSymptoms}>POUCO FLUXO</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.buttonSymptoms}>
+                            <Icon type="FontAwesome" name="circle" style={styles.iconSymptoms} />
+                            <Text style={styles.boxSymptoms}>SPOTTING</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.buttonSymptoms}>
+
+                            <Icon type="FontAwesome" name="bolt" style={styles.iconSymptoms} />
+                            <Text style={styles.boxSymptoms}>CÓLICA</Text>
+                        </TouchableOpacity>
+
+                    </View>
                 </View>
             </View>
         </Content>
@@ -261,6 +297,20 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 18,
     },
+    containerBoxPrediction: {
+        marginTop: 10,
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignContent: 'center',
+    },
+    daysPrediction: {
+        color: 'blue',
+        fontSize: 20,
+        textAlign: 'center',
+        fontFamily: 'Arial',
+    },
+
     boxPrediction: {
         flex: 1,
         flexDirection: 'row',
@@ -268,7 +318,10 @@ const styles = StyleSheet.create({
         fontFamily: 'Arial',
         fontWeight: 'bold',
         color: '#666460',
-        fontSize: 11,
+        fontSize: 12,
+        textAlign: 'center',
+        alignItems: "center",
+        justifyContent: "center",
     },
     titleSymptoms: {
         fontFamily: 'Arial',
@@ -276,15 +329,48 @@ const styles = StyleSheet.create({
         color: '#A92257',
         textAlign: 'center',
         fontSize: 18,
+        marginTop: 10,
+        marginBottom: 5,
+    },
+    buttonSymptoms: {
+        borderBottomWidth: 3,
+        borderWidth: 0.5,
+        borderColor: 'pink',
+        alignContent: 'center',
+        width: 90,
+        height: 80,
+        backgroundColor: 'white',
+        marginVertical: 3,
+        textAlign: 'center',
+        borderRadius: 10,
+        alignItems: "center",
+        justifyContent: "center",
+
+    },
+    containerBoxSymptoms: {
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        padding: 2,
     },
     boxSymptoms: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-around',
+        flexWrap: 'wrap',
         fontFamily: 'Arial',
         fontWeight: 'bold',
         color: '#666460',
-        fontSize: 11,
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: 'center',
+        fontSize: 10,
+    },
+    iconSymptoms: {
+
+        color: '#A92257',
+        alignItems: "center",
+        justifyContent: "center",
+
+
     },
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, TextInput, StyleSheet, } from 'react-native';
+import { Text, View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { Container, Content, Label, Form, Icon, } from 'native-base';
 import Header from '../layout/Header';
 
@@ -79,8 +79,11 @@ export default function ProfileScreen() {
                         <Label style={styles.inputLabel}>PROFISSÃO</Label>
                         <TextInput style={styles.inputBox}
                             textAlign='right' />
-
                     </Form>
+                    <TouchableOpacity style={styles.buttonEntry} >
+                        <Icon type="FontAwesome" name="check" style={styles.buttonText} />
+
+                    </TouchableOpacity>
                 </View>
             </Content>
         </Container>
@@ -113,14 +116,15 @@ const styles = StyleSheet.create({
         marginTop: 5,
         fontFamily: 'Arial',
         fontWeight: '100',
-        fontSize: 10,
+        fontSize: 10.5,
         color: 'black',
+        textAlign: 'left'
 
 
     },
     iconInformation: {
         color: '#f5bce3',
-        fontSize: 15,
+        fontSize: 18,
         marginLeft: 18,
         marginRight: 35,
         marginTop: -22,
@@ -157,6 +161,30 @@ const styles = StyleSheet.create({
         marginLeft: 350,
 
 
-    }
+    },
+    buttonEntry: {
+        fontFamily: 'Arial',
+        fontWeight: 'bold',
+        marginLeft: 35,
+        marginRight: 35,
+        alignItems: 'center',
+        backgroundColor: '#A92257',
+        borderRadius: 8,
+        width: 330,
+        height: 45,
+        justifyContent: 'center',
+        marginTop: 50,
+        marginBottom: 40,
+
+    },
+    buttonText: {
+        fontSize: 30,
+
+        color: '#fff',
+        fontFamily: 'Arial',
+        alignContent: 'center'
+
+
+    },
 
 })
