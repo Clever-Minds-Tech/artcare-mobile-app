@@ -13,17 +13,22 @@ const FAQScreen = ({
     const [questions, setQuestions] = useState([])
 
     const openAnswer = (index) => {
+        if (index != activeIndex) {
+            setActiveIndex(index)
+        } else {
+            setActiveIndex(-1)
+        }
         console.log(index)
-        setActiveIndex(index)
+
 
     }
 
     useEffect(() => {
         loadData();
-      }, []);
-    
-    
-     const loadData = async () => {
+    }, []);
+
+
+    const loadData = async () => {
         const response = await fetch(`https://mirthartcare.virtualcare.pt/artcare/FAQ/`);
         const data = await response.json();
         const foo5 = Object.values(data.INFO)
@@ -38,7 +43,7 @@ const FAQScreen = ({
         })
 
         setQuestions(items)
-      }
+    }
 
     return (
         <Container>
@@ -48,16 +53,23 @@ const FAQScreen = ({
                     <Text style={styles.textData}>
                         PERGUNTAS FREQUENTES
                    </Text>
-                    {   
+                    {
                         questions.map((item, index) => {
                             return (
                                 <React.Fragment key={index}>
-                                    <Text onPress={() => openAnswer(index)} style={styles.textQuestion}>{item.question}</Text>
-                                    
-                                    <Icon type="FontAwesome" name="chevron-right" style={styles.iconChevron} onPress={() => openAnswer(index)}/>
-                                    
+
+                                    <View style={styles.boxQuestion}>
+                                        <Icon type="FontAwesome" name="chevron-right" style={styles.iconChevron} onPress={() => openAnswer(index)} />
+                                        <Text onPress={() => openAnswer(index)} style={styles.textQuestion}>{item.question}</Text>
+                                    </View>
+
+
                                     { activeIndex === index &&
-                                        <Text className='answerActive'>{item.answer}</Text>
+                                        <View style={styles.answerBox}>
+
+                                            <Text style={styles.answerText} className='answerActive'>{item.answer}</Text>
+                                        </View>
+
                                     }
                                 </React.Fragment>
                             )
@@ -85,35 +97,55 @@ const styles = StyleSheet.create({
         marginTop: 20,
         fontSize: 23,
         textDecorationStyle: "solid",
+        marginBottom: 50,
     },
-    textQuestion: {
-        flex: 1,
-        flexDirection: 'column',
-        marginTop: 40,
-        marginLeft: 35,
-        marginRight: 35,
-        fontFamily: 'Arial',
-        fontWeight: 'bold',
-        width: '85%',
-        fontSize: 20,
-        borderColor: '#EDEDED',
-        color: '#A92257',
-        borderBottomWidth: 4,
-        borderRadius: 10,
-        textAlign: 'left',
-        paddingBottom: 4,
-    },
-    iconChevron: {
+    boxQuestion: {
         flex: 1,
         flexDirection: 'row',
+        marginTop: 30,
+        marginLeft: 35,
+        marginRight: 35,
+        borderColor: '#EDEDED',
+        borderBottomWidth: 4,
+        borderRadius: 10,
+        alignContent: 'center',
+        padding: 1,
+    },
+    textQuestion: {
+        marginLeft: 2,
+        marginBottom: 20,
         fontFamily: 'Arial',
         fontWeight: 'bold',
+        fontSize: 20,
+        color: '#A92257',
+        textAlign: 'left',
+        marginTop: -15,
+    },
+    iconChevron: {
+        fontFamily: 'Arial',
         color: '#A92257',
         fontSize: 20,
-        marginLeft: 17,
-        marginTop: -27,
-        alignContent: 'center'
+        alignContent: 'center',
+        marginTop: -8,
+        marginLeft: -13,
     },
+    answerText: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginLeft: 35,
+        marginRight: 45,
+        fontFamily: 'Arial',
+        fontSize: 14,
+        textAlign: 'left',
+        marginTop: 10,
+        marginBottom: 10,
+    },
+    answerBox: {
+        backgroundColor: '#EDEDED',
+        marginTop: 30,
+    },
+
 })
 
 export default FAQScreen;
