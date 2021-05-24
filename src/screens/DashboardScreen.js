@@ -16,7 +16,7 @@ const AppointmentsScreen = ({
         <Header />
         <Content>
             <View>
-                <Text style={styles.textData}>MEDICAÇÃO E CONSULTAS</Text>
+
                 <View style={styles.container}>
                     <FontAwesome name="calendar" style={styles.dateIcon} />
                     <Text style={styles.dateMonth}>Abril</Text>
@@ -27,27 +27,20 @@ const AppointmentsScreen = ({
 
                 <Agenda>
 
-
                 </Agenda>
-                <View style={styles.dashboard}>
 
-                </View>
             </View>
+
+            <View style={styles.dashboard}>
+                <HorizontalPill></HorizontalPill>
+            </View>
+
         </Content>
     </Container>
 );
 
 const styles = StyleSheet.create({
-    textData: {
-        fontFamily: 'Arial',
-        fontWeight: 'bold',
-        color: '#A92257',
-        textAlign: 'center',
-        marginTop: 30,
-        marginBottom: 20,
-        fontSize: 23,
-        textDecorationStyle: "solid",
-    },
+
     container: {
         flexDirection: 'row',
         marginVertical: 10

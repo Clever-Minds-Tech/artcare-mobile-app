@@ -1,12 +1,19 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import { Container, Content, Icon } from 'native-base';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Container, Content, Icon, Button } from 'native-base';
 import Header from '../layout/Header';
 import { FontAwesome } from '@expo/vector-icons';
 import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
-
-const tpmCalendarIcon = { key: 'tpm', color: '#EE9838', fontSize: 60 }; // raio tpm icon
-const heartCalendarIcon = { key: 'heart', color: '#F0668C', fontSize: 60 }; //source={ //require('https://upload.wikimedia.org/wikipedia/commons/c/c8/Love_Heart_symbol.svg') } }; // relao sexual
+import HorizontalPill from '../components/HorizontalPill';
+import NormalFlow from '../components/NormalFlow';
+import CircleOvulation from '../components/CircleOvulation';
+import NextMenstruation from '../components/NextMenstruation';
+import HeartLine from '../components/HeartLine';
+import CircleBoobs from '../components/CircleBoobs';
+import LittleFlow from '../components/LittleFlow';
+import Spotting from '../components/Spotting';
+import Colic from '../components/Colic';
+import Tint from '../components/Tint';
 
 
 
@@ -42,7 +49,7 @@ const CalendarScreen = ({
                                 container: {
                                     borderBottomEndRadius: 0,
                                     borderColor: "#EEBCCD",
-                                    borderRadius: 0,
+                                    borderRadius: 3,
                                     borderBottomWidth: 4
                                 },
                                 selected: true
@@ -53,7 +60,7 @@ const CalendarScreen = ({
                                 container: {
                                     borderBottomEndRadius: 0,
                                     borderColor: "#E290AB",
-                                    borderRadius: 0,
+                                    borderRadius: 3,
                                     borderBottomWidth: 4
                                 },
                                 selected: true
@@ -65,7 +72,7 @@ const CalendarScreen = ({
                                     borderBottomEndRadius: 0,
                                     borderColor: "#E290AB",
                                     borderRadius: 0,
-                                    borderBottomWidth: 4
+                                    borderBottomWidth: 4,
                                 },
                                 selected: true
                             }
@@ -172,7 +179,10 @@ const CalendarScreen = ({
                             }
                         },
                     }}
-                ></CalendarList>
+                >
+
+                    <CircleOvulation></CircleOvulation>
+                </CalendarList>
                 {/* <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-around', marginTop: 50 }}>
                     <FontAwesome name="bolt" style={tpmCalendarIcon} />
                     <FontAwesome name="heart" style={heartCalendarIcon} />
@@ -181,35 +191,68 @@ const CalendarScreen = ({
 
                     <Text style={styles.prediction}>PREVISÕES</Text>
 
+                    <View style={styles.containerBoxPrediction} >
+                        <TouchableOpacity style={styles.boxPrediction}>
+                            <CircleOvulation style={styles.circleOvulation}></CircleOvulation>
+                            <Text style={styles.boxPrediction} >OVULAÇÃO</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.boxPrediction}>
+                            <Text style={styles.daysPrediction} >Dias</Text>
+                            <Text style={styles.boxPrediction}>PERÍODO                                                                  FÉRTIL</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.boxPrediction}>
+                            <NextMenstruation style={styles.nextMenstruation}></NextMenstruation>
+                            <Text style={styles.boxPrediction}>PRÓXIMA MENSTRUAÇÃO</Text>
+                        </TouchableOpacity>
 
-                    <Icon type="FontAwesome" name="spinner" style={styles.icon} />
-                    <Text style={styles.boxPrediction}>OVULAÇÃO</Text>
 
-                    <Text style={styles.boxPrediction}>PERÍODO FÉRTIL</Text>
-                    <Icon type="FontAwesome" name="ellipsis-h" style={styles.icon} />
-                    <Text style={styles.boxPrediction}>PRÓXIMA MENSTRUAÇÃO</Text>
-
-
+                    </View>
 
                     <Text style={styles.titleSymptoms}>ADICIONAR SINTOMA</Text>
 
+                    <View style={styles.containerBoxSymptoms} >
 
+                        <TouchableOpacity style={styles.buttonSymptoms}>
+                            <Icon type="FontAwesome" name="heart" style={styles.hearts} />
+                            <Text style={styles.boxSymptoms}>SEXO SEM PROTEÇÃO</Text>
+                        </TouchableOpacity>
 
-                    <Icon type="FontAwesome" name="heart" style={styles.iconHeart} />
-                    <Text style={styles.boxSymptoms}>SEXO SEM PROTEÇÃO</Text>
-                    <Icon type="FontAwesome" name="heart" style={styles.iconHeartLine} />
-                    <Text style={styles.boxSymptoms}>SEXO COM PROTEÇÃO</Text>
-                    <Icon type="FontAwesome" name="tint" style={styles.icon} />
-                    <Text style={styles.boxSymptoms}>SECREÇÃO TRANSPARENTE</Text>
-                    <Icon type="FontAwesome" name="circle" style={styles.icon} />
-                    <Text style={styles.boxSymptoms}>MAMAS SENSÍVEIS</Text>
+                        <TouchableOpacity style={styles.buttonSymptoms}>
+                            <HeartLine style={styles.hearts}></HeartLine>
+                            <Text style={styles.boxSymptoms}>SEXO COM PROTEÇÃO</Text>
+                        </TouchableOpacity>
 
-                    <Text style={styles.boxSymptoms}>FLUXO NORMAL</Text>
-                    <Text style={styles.boxSymptoms}>POUCO FLUXO</Text>
-                    <Text style={styles.boxSymptoms}>SPOTTING</Text>
+                        <TouchableOpacity style={styles.buttonSymptoms}>
+                            <Tint style={styles.tint}></Tint>
+                            <Text style={styles.boxSymptoms}>SECREÇÃO TRANSPARENTE</Text>
+                        </TouchableOpacity>
 
-                    <Icon type="FontAwesome" name="bolt" style={styles.icon} />
-                    <Text style={styles.boxSymptoms}>CÓLICA</Text>
+                        <TouchableOpacity style={styles.buttonSymptoms}>
+                            <CircleBoobs style={styles.circleBoobs}></CircleBoobs>
+                            <Text style={styles.boxSymptoms}>MAMAS SENSÍVEIS</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.buttonSymptoms}>
+                            <NormalFlow style={styles.normalFlow}></NormalFlow>
+                            <Text style={styles.boxSymptoms}>FLUXO         NORMAL</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.buttonSymptoms}>
+                            <LittleFlow style={styles.littleFlow}></LittleFlow>
+                            <Text style={styles.boxSymptoms}>POUCO          FLUXO</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.buttonSymptoms}>
+                            <Spotting style={styles.spotting}></Spotting>
+                            <Text style={styles.boxSymptoms}>SPOTTING</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.buttonSymptoms}>
+
+                            <Colic style={styles.colic}></Colic>
+                            <Text style={styles.boxSymptoms}>CÓLICA</Text>
+                        </TouchableOpacity>
+                        <HorizontalPill></HorizontalPill>
+                    </View>
                 </View>
             </View>
         </Content>
@@ -260,31 +303,129 @@ const styles = StyleSheet.create({
         color: '#666460',
         textAlign: 'center',
         fontSize: 18,
+        marginTop: 15,
     },
-    boxPrediction: {
+    containerBoxPrediction: {
+        marginTop: 6,
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-around',
+        alignContent: 'center',
+        marginBottom: 10,
+
+    },
+    nextMenstruation: {
+        marginBottom: -85,
+        marginTop: -45,
+        marginRight: -70,
+
+
+    },
+    circleOvulation: {
+
+        marginBottom: -25,
+        marginLeft: 20,
+    },
+    daysPrediction: {
+        color: 'blue',
+        fontSize: 22,
+        textAlign: 'center',
+        fontFamily: 'Arial',
+        marginTop: 20,
+    },
+    boxPrediction: {
+        flex: 1,
+        flexDirection: 'column',
         fontFamily: 'Arial',
         fontWeight: 'bold',
         color: '#666460',
-        fontSize: 11,
+        fontSize: 12,
+        textAlign: 'center',
+        alignItems: "center",
+        justifyContent: "center",
+
     },
+
+
     titleSymptoms: {
         fontFamily: 'Arial',
         fontWeight: 'bold',
         color: '#A92257',
         textAlign: 'center',
         fontSize: 18,
+        marginTop: 10,
+        marginBottom: 5,
+    },
+    buttonSymptoms: {
+        borderBottomWidth: 3,
+        borderWidth: 0.5,
+        borderColor: 'pink',
+        alignContent: 'center',
+        width: 90,
+        height: 80,
+        backgroundColor: 'white',
+        marginVertical: 3,
+        textAlign: 'center',
+        borderRadius: 10,
+        alignItems: "center",
+        justifyContent: "center",
+
+
+    },
+    containerBoxSymptoms: {
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        padding: 2,
     },
     boxSymptoms: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-around',
+        flexWrap: 'wrap',
         fontFamily: 'Arial',
         fontWeight: 'bold',
         color: '#666460',
-        fontSize: 11,
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: 'center',
+        fontSize: 10,
+
+
+    },
+    hearts: {
+        color: '#A92257',
+        alignItems: "center",
+        justifyContent: "center",
+
+        marginTop: 5,
+        marginBottom: 6,
+
+
+    },
+    tint: {
+        marginRight: -7,
+        marginBottom: -6,
+    },
+    circleBoobs: {
+        marginBottom: -4,
+
+    },
+    normalFlow: {
+        marginBottom: -27,
+        marginTop: -7,
+    },
+    littleFlow: {
+        marginBottom: -27,
+        marginTop: -7,
+
+    },
+    spotting: {
+        marginBottom: -33,
+        marginLeft: 2,
+        marginTop: -4,
+    },
+    colic: {
+        marginBottom: -12,
+
     },
 
 

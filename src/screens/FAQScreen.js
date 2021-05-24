@@ -6,7 +6,6 @@ import { block } from 'react-native-reanimated';
 
 const questionList = require('../apis/faq.json');
 
-
 const FAQScreen = ({
     params,
 }) => {
@@ -49,8 +48,7 @@ const FAQScreen = ({
                     <Text style={styles.textData}>
                         PERGUNTAS FREQUENTES
                    </Text>
-                    {
-                        
+                    {   
                         questions.map((item, index) => {
                             return (
                                 <React.Fragment key={index}>
@@ -61,9 +59,7 @@ const FAQScreen = ({
                                     { activeIndex === index &&
                                         <Text className='answerActive'>{item.answer}</Text>
                                     }
-                                    
                                 </React.Fragment>
-
                             )
                         })
                     }

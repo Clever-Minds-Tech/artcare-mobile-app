@@ -15,8 +15,9 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Login from './src/screens/LoginScreen';
 import Signup from './src/screens/SignupScreen';
 import CustomSidebarMenu from './src/components/CustomSidebarMenu';
+import DashboardScreen from './src/screens/DashboardScreen'
 //import * as Linking from 'expo-linking';
-import {DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
+import { DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
 import { Linking } from 'react-native';
 export default class App extends React.Component {
 
@@ -38,7 +39,7 @@ export default class App extends React.Component {
     this.setState({ fontsLoaded: true });
   }
 
-  
+
   render() {
     if (!this.state.fontsLoaded) {
       return <AppLoading />;
@@ -71,6 +72,7 @@ export default class App extends React.Component {
             <Drawer.Screen name="Perguntas frequentes" component={FAQScreen} />
             <Drawer.Screen name="Clínicas de PMA" component={PMAScreen} />
             <Drawer.Screen name="Sandbox Login" component={Login} />
+            <Drawer.Screen name="Dashboard Screen" component={DashboardScreen} />
           </Drawer.Navigator>
 
         </NavigationContainer>
