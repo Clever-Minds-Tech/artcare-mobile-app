@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, View, TextInput, StyleSheet, TouchableOpacity, Button, Image } from 'react-native';
 import { Container, Content, Icon, Accordion } from 'native-base';
 import Header from '../layout/Header';
@@ -6,18 +6,41 @@ import { block } from 'react-native-reanimated';
 
 const questionList = require('../apis/faq.json');
 
-console.log(questionList);
 
 const FAQScreen = ({
     params,
 }) => {
-    const [activeIndex, setActiveIndex] = useState(-1)
+    const [activeIndex, setActiveIndex] = useState(2)
+    const [questions, setQuestions] = useState([])
 
     const openAnswer = (index) => {
         console.log(index)
         setActiveIndex(index)
 
     }
+
+    useEffect(() => {
+        loadData();
+      }, []);
+    
+    
+     const loadData = async () => {
+        const response = await fetch(`https://mirthartcare.virtualcare.pt/artcare/FAQ/`);
+        const data = await response.json();
+        const foo5 = Object.values(data.INFO)
+        let items = [];
+        foo5.map((item) => {
+            let faqItem = {
+                question: item.PERGUNTA,
+                answer: item.RESPOSTA
+            };
+
+            items.push(faqItem);
+        })
+
+        setQuestions(items)
+      }
+
     return (
         <Container>
             <Header />
@@ -26,15 +49,19 @@ const FAQScreen = ({
                     <Text style={styles.textData}>
                         PERGUNTAS FREQUENTES
                    </Text>
-
                     {
-                        questionList.items.map(item => {
+                        
+                        questions.map((item, index) => {
                             return (
-                                <React.Fragment key={item.index}>
-                                    <Text onPress={() => openAnswer(item.index)} style={styles.textQuestion}>{item.question}</Text>
-                                    <Icon type="FontAwesome" name="chevron-right" style={styles.iconChevron} />
+                                <React.Fragment key={index}>
+                                    <Text onPress={() => openAnswer(index)} style={styles.textQuestion}>{item.question}</Text>
                                     
-                                    <Text className={activeIndex == item.index ? 'answerActive' : 'textAnswer'} style={styles.textAnswer}>{item.answer}</Text>
+                                    <Icon type="FontAwesome" name="chevron-right" style={styles.iconChevron} onPress={() => openAnswer(index)}/>
+                                    
+                                    { activeIndex === index &&
+                                        <Text className='answerActive'>{item.answer}</Text>
+                                    }
+                                    
                                 </React.Fragment>
 
                             )
@@ -53,7 +80,6 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         fontFamily: 'Arial',
         fontWeight: 'bold',
-
     },
     textData: {
         fontFamily: 'Arial',
@@ -80,15 +106,6 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         textAlign: 'left',
         paddingBottom: 4,
-
-
-    },
-    textAnswer: {
-        display: 'none',
-
-    },
-    answerActive: {
-        display: 'flex',
     },
     iconChevron: {
         flex: 1,
@@ -100,11 +117,7 @@ const styles = StyleSheet.create({
         marginLeft: 17,
         marginTop: -27,
         alignContent: 'center'
-
-
-
     },
-
 })
 
 export default FAQScreen;
