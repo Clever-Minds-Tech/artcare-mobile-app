@@ -9,7 +9,7 @@ const questionList = require('../apis/faq.json');
 const FAQScreen = ({
     params,
 }) => {
-    const [activeIndex, setActiveIndex] = useState(2)
+    const [activeIndex, setActiveIndex] = useState(-1)
     const [questions, setQuestions] = useState([])
 
     const openAnswer = (index) => {
