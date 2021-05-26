@@ -234,12 +234,12 @@ const CalendarScreen = ({
 
                         <TouchableOpacity style={styles.buttonSymptoms}>
                             <NormalFlow style={styles.normalFlow}></NormalFlow>
-                            <Text style={styles.boxSymptoms}>FLUXO         NORMAL</Text>
+                            <Text style={styles.boxSymptoms}>FLUXO{"\n"}NORMAL</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity style={styles.buttonSymptoms}>
                             <LittleFlow style={styles.littleFlow}></LittleFlow>
-                            <Text style={styles.boxSymptoms}>POUCO          FLUXO</Text>
+                            <Text style={styles.boxSymptoms}>POUCO{"\n"}FLUXO</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity style={styles.buttonSymptoms}>
@@ -251,7 +251,7 @@ const CalendarScreen = ({
                             <Colic style={styles.colic}></Colic>
                             <Text style={styles.boxSymptoms}>CÓLICA</Text>
                         </TouchableOpacity>
-                        <HorizontalPill></HorizontalPill>
+
                     </View>
                 </View>
             </View>
