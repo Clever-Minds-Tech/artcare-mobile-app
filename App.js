@@ -15,7 +15,14 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Login from './src/screens/LoginScreen';
 import Signup from './src/screens/SignupScreen';
 import CustomSidebarMenu from './src/components/CustomSidebarMenu';
-import DashboardScreen from './src/screens/DashboardScreen'
+import DashboardMenstruation from './src/screens/DashboardMenstruation';
+import DashboardOvulation from './src/screens/DashboardOvulation';
+import DashboardPregnant from './src/screens/DashboardPregnant';
+import DashboardDefault from './src/screens/DashboardDefault';
+
+
+
+
 //import * as Linking from 'expo-linking';
 import { DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
 import { Linking } from 'react-native';
@@ -72,7 +79,10 @@ export default class App extends React.Component {
             <Drawer.Screen name="Perguntas frequentes" component={FAQScreen} />
             <Drawer.Screen name="Clínicas de PMA" component={PMAScreen} />
             <Drawer.Screen name="Sandbox Login" component={Login} />
-            <Drawer.Screen name="Dashboard Screen" component={DashboardScreen} />
+            <Drawer.Screen name="Dashboard Menstruation" component={DashboardMenstruation} />
+            <Drawer.Screen name="Dashboard Ovulation" component={DashboardOvulation} />
+            <Drawer.Screen name="Dashboard Pregnant" component={DashboardPregnant} />
+            <Drawer.Screen name="Dashboard Default" component={DashboardDefault} />
           </Drawer.Navigator>
 
         </NavigationContainer>
