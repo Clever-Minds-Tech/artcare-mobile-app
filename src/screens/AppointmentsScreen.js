@@ -26,15 +26,96 @@ const AppointmentsScreen = ({
                 </View>
 
                 <Agenda>
-
-
                 </Agenda>
-                <View style={styles.dashboard}>
 
+                <View style={styles.queryMedication}>
+                    <Text>
+                        09/02/2021
+                    </Text>
+                    <Text>
+                        | Terça-feira
+                    </Text>
+
+                </View>
+                <View>
+                    <HorizontalPill></HorizontalPill>
+                    <Text>
+                        MEDICAÇÕES
+                    </Text>
+                    <Text>
+                        Bemfola 225 UI 1 x dia
+                    </Text>
+                    <Text>
+                        Observações sobre a utilização do medicamento
+                    </Text>
+                </View>
+                <Text>
+                    HOJE
+                </Text>
+                <View style={styles.queryMedication}>
+                    <Text>
+                        10/02/2021
+                    </Text>
+
+                    <Text>
+                        | Quarta-feira
+                    </Text>
+                </View>
+                <View>
+                    <HorizontalPill></HorizontalPill>
+                    <Text>
+                        MEDICAÇÕES
+                    </Text>
+                    <Text>
+                        Bemfola 225 UI 1 x dia
+                    </Text>
+                    <View style={styles.query}>
+                        <Text>
+                            Observações sobre a utilização do medicamento
+                    </Text>
+                        <Text>
+                            HH:MM
+                    </Text>
+                    </View>
+                </View>
+                <Text>
+                    CONSULTA
+                </Text>
+                <View style={styles.query}>
+
+                    <Text>
+                        Consulta com o Dr. Ricardo Santos
+                    </Text>
+                    <Text>
+                        14h30
+                    </Text>
+                </View>
+                <Text>
+                    Ferticare
+                    </Text>
+                <View style={styles.queryMedication}>
+                    <Text>
+                        11/02/2021
+                    </Text>
+                    <Text>
+                        | Quinta-feira
+                    </Text>
+                </View>
+                <View>
+                    <HorizontalPill></HorizontalPill>
+                    <Text>
+                        MEDICAÇÕES
+                    </Text>
+                    <Text>
+                        Bemfola 225 UI 1 x dia
+                    </Text>
+                    <Text>
+                        Observações sobre a utilização do medicamento
+                    </Text>
                 </View>
             </View>
         </Content>
-    </Container>
+    </Container >
 );
 
 const styles = StyleSheet.create({
@@ -80,11 +161,14 @@ const styles = StyleSheet.create({
         fontSize: 11,
 
     },
-    dashboard: {
-
+    queryMedication: {
+        flex: 1,
+        flexDirection: 'row'
     },
-    circleImage: {
-        fontSize: 20,
+    query: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between'
     },
 });
 export default AppointmentsScreen;
