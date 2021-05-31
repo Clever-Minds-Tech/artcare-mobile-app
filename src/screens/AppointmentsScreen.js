@@ -27,91 +27,93 @@ const AppointmentsScreen = ({
 
                 <Agenda>
                 </Agenda>
-
-                <View style={styles.queryMedication}>
-                    <Text>
-                        09/02/2021
+                <View style={styles.boxMedication}>
+                    <View style={styles.dateBox}>
+                        <Text style={styles.date}>
+                            09/02/2021
                     </Text>
-                    <Text>
-                        | Terça-feira
-                    </Text>
-
-                </View>
-                <View>
-                    <HorizontalPill></HorizontalPill>
-                    <Text>
-                        MEDICAÇÕES
-                    </Text>
-                    <Text>
-                        Bemfola 225 UI 1 x dia
-                    </Text>
-                    <Text>
-                        Observações sobre a utilização do medicamento
-                    </Text>
-                </View>
-                <Text>
-                    HOJE
-                </Text>
-                <View style={styles.queryMedication}>
-                    <Text>
-                        10/02/2021
+                        <Text style={styles.day}>
+                            | Terça-feira
                     </Text>
 
-                    <Text>
-                        | Quarta-feira
+                    </View>
+                    <View>
+                        <HorizontalPill style={styles.horizontalPill}></HorizontalPill>
+                        <Text style={styles.medication}>
+                            MEDICAÇÕES
                     </Text>
-                </View>
-                <View>
-                    <HorizontalPill></HorizontalPill>
-                    <Text>
-                        MEDICAÇÕES
+                        <Text style={styles.medicationDay}>
+                            Bemfola 225 UI 1 x dia
                     </Text>
-                    <Text>
-                        Bemfola 225 UI 1 x dia
-                    </Text>
-                    <View style={styles.query}>
-                        <Text>
+                        <Text style={styles.note}>
                             Observações sobre a utilização do medicamento
                     </Text>
-                        <Text>
-                            HH:MM
+                    </View>
+                    <Text style={styles.today}>
+                        HOJE
+                    </Text>
+                    <View style={styles.dateBox}>
+                        <Text style={styles.date}>
+                            10/02/2021
+                    </Text>
+
+                        <Text style={styles.day}>
+                            | Quarta-feira
                     </Text>
                     </View>
-                </View>
-                <Text>
-                    CONSULTA
-                </Text>
-                <View style={styles.query}>
+                    <View>
+                        <HorizontalPill style={styles.horizontalPill}></HorizontalPill>
+                        <Text style={styles.medication}>
+                            MEDICAÇÕES
+                    </Text>
+                        <Text style={styles.todayMedication}>
+                            Bemfola 225 UI 1 x dia
+                    </Text>
+                        <View style={styles.query}>
+                            <Text style={styles.noteTodayMedication}>
+                                Observações sobre a utilização do medicamento
+                    </Text>
+                            <Text>
+                                HH:MM
+                    </Text>
+                        </View>
+                    </View>
+                    <View style={styles.query}>
+                        <Text>
+                            CONSULTA
+                         </Text>
 
-                    <Text>
-                        Consulta com o Dr. Ricardo Santos
+                        <Text>
+                            Consulta com o Dr. Ricardo Santos
+                             </Text>
+                        <Text>
+                            14h30
+                             </Text>
+
+                        <Text style={styles.queryDetails}>
+                            Ferticare
                     </Text>
-                    <Text>
-                        14h30
+                    </View>
+                    <View style={styles.dateBox}>
+                        <Text style={styles.date}>
+                            11/02/2021
                     </Text>
-                </View>
-                <Text>
-                    Ferticare
+                        <Text style={styles.day}>
+                            | Quinta-feira
                     </Text>
-                <View style={styles.queryMedication}>
-                    <Text>
-                        11/02/2021
+                    </View>
+                    <View>
+                        <HorizontalPill style={styles.horizontalPill}></HorizontalPill>
+                        <Text style={styles.medication}>
+                            MEDICAÇÕES
                     </Text>
-                    <Text>
-                        | Quinta-feira
+                        <Text style={styles.medicationDay}>
+                            Bemfola 225 UI 1 x dia
                     </Text>
-                </View>
-                <View>
-                    <HorizontalPill></HorizontalPill>
-                    <Text>
-                        MEDICAÇÕES
+                        <Text style={styles.note}>
+                            Observações sobre a utilização do medicamento
                     </Text>
-                    <Text>
-                        Bemfola 225 UI 1 x dia
-                    </Text>
-                    <Text>
-                        Observações sobre a utilização do medicamento
-                    </Text>
+                    </View>
                 </View>
             </View>
         </Content>
@@ -161,14 +163,82 @@ const styles = StyleSheet.create({
         fontSize: 11,
 
     },
-    queryMedication: {
+    boxMedication: {
         flex: 1,
-        flexDirection: 'row'
+        flexDirection: 'column',
+        marginLeft: 30,
+        marginRight: 30,
+        marginTop: -90,
+
     },
-    query: {
+    dateBox: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'space-between'
     },
+    date: {
+        fontWeight: "bold",
+        fontFamily: 'Arial',
+        color: '#4C4D4F',
+        fontSize: 14,
+
+    },
+    day: {
+        fontFamily: 'Arial',
+        color: '#4C4D4F',
+        fontSize: 14,
+        fontWeight: '400',
+
+    },
+    medication: {
+        fontFamily: 'Arial',
+        fontWeight: 'bold',
+        color: '#4B67D1',
+        fontSize: 13,
+        marginLeft: 25,
+        marginTop: -41,
+    },
+    horizontalPill: {
+        marginTop: -15,
+        marginLeft: -20,
+    },
+
+    medicationDay: {
+        fontWeight: "bold",
+        fontFamily: 'Arial',
+        color: '#4C4D4F',
+        fontSize: 14,
+        marginTop: 5,
+    },
+    note: {
+        fontFamily: 'Arial',
+        color: '#4C4D4F',
+        fontSize: 12,
+        fontWeight: '400',
+        marginTop: 5,
+    },
+    today: {
+        fontWeight: "bold",
+        fontFamily: 'Arial',
+        color: '#4C4D4F',
+        fontSize: 20,
+    },
+    todayMedication: {
+        fontFamily: 'Arial',
+        fontWeight: 'bold',
+        color: '#4B67D1',
+        fontSize: 13,
+    },
+    noteTodayMedication: {
+        fontFamily: 'Arial',
+        fontWeight: '400',
+        color: '#4B67D1',
+        fontSize: 12,
+    },
+    query: {
+        color: '#E290AB',
+
+    },
+
+
 });
 export default AppointmentsScreen;
