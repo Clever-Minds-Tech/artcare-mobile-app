@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, TextInput, StyleSheet, TouchableOpacity, Button, Image } from 'react-native';
+import { Text, View, TextInput, StyleSheet, TouchableOpacity, Button, Image, Picker } from 'react-native';
 import { Container, Content, Icon, Accordion } from 'native-base';
 import Header from '../layout/Header';
 import { block } from 'react-native-reanimated';
+import RNPickerSelect from 'react-native-picker-select';
 
 const PMAScreen = ({
     params,
@@ -33,11 +34,7 @@ const PMAScreen = ({
         foo5.map((item) => {
             let faqItem = {
                 question: item.SIGLA,
-                answer: item.DESCRICAO,
-                corpo: item.CORPO_CLINICO,
-                morada: item.MORADA,
-                contact: item.CONTATOS
-
+                answer: item.DESCRICAO
             };
 
             items.push(faqItem);
@@ -52,27 +49,20 @@ const PMAScreen = ({
             <Content>
                 <View style={styles.container}>
                     <Text style={styles.textData}>
-                        CLÍNICAS DE PMA
+                        CLINICAS DE PMA
                    </Text>
+                   <RNPickerSelect
+            onValueChange={(value) => console.log(value)}
+            items={[
+                { label: 'Football', value: 'football' },
+                { label: 'Baseball', value: 'baseball' },
+                { label: 'Hockey', value: 'hockey' },
+            ]}
+        />
+                    
                     {
-
-
                         questions.map((item, index) => {
                             return (
-                                <View style={styles.boxQuestion}>
-                                    <Text>
-
-                                    <Text style={styles.pmaTitle}>{item.question} - {item.answer} {"\n"}</Text>
-                                    <Text style={styles.pmaDescription}>{item.corpo}{"\n"}</Text>
-                                    <Text style={styles.pmaDescription}>{item.morada}{"\n"}</Text>
-                                    <Text style={styles.pmaDescription}>{item.contact}</Text>
-                                                                        
-                                    </Text>
-                                    
-
-
-                                </View>
-                                /*
                                 <React.Fragment key={index}>
 
                                     <View style={styles.boxQuestion}>
@@ -81,14 +71,14 @@ const PMAScreen = ({
                                     </View>
 
 
-                                    { activeIndex === index &&
+                                    {activeIndex === index &&
                                         <View style={styles.answerBox}>
 
                                             <Text style={styles.answerText} className='answerActive'>{item.answer}</Text>
                                         </View>
 
                                     }
-                                </React.Fragment> */
+                                </React.Fragment>
                             )
                         })
                     }
@@ -161,22 +151,6 @@ const styles = StyleSheet.create({
     answerBox: {
         backgroundColor: '#EDEDED',
         marginTop: 30,
-    },
-    pmaTitle: {
-        flex: 1,
-        flexDirection: 'row',
-        fontWeight: 'bold'
-    },
-    pmaDescription: {
-        flex: 1,
-        flexDirection: 'row'
-    },
-    baseText: {
-        fontFamily: 'Cochin',
-    },
-    titleText: {
-        fontSize: 20,
-        fontWeight: 'bold',
     },
 
 })

@@ -33,11 +33,7 @@ const PMAScreen = ({
         foo5.map((item) => {
             let faqItem = {
                 question: item.SIGLA,
-                answer: item.DESCRICAO,
-                corpo: item.CORPO_CLINICO,
-                morada: item.MORADA,
-                contact: item.CONTATOS
-
+                answer: item.DESCRICAO
             };
 
             items.push(faqItem);
@@ -52,27 +48,18 @@ const PMAScreen = ({
             <Content>
                 <View style={styles.container}>
                     <Text style={styles.textData}>
-                        CLÍNICAS DE PMA
+                    CLINICAS DE PMA
                    </Text>
+                   <Picker
+  selectedValue={this.state.language}
+  style={{ height: 50, width: 100 }}
+  onValueChange={(itemValue, itemIndex) => this.setState({ language: itemValue })}>
+  <Picker.Item label="Java" value="java" />
+  <Picker.Item label="JavaScript" value="js" />
+</Picker>
                     {
-
-
                         questions.map((item, index) => {
                             return (
-                                <View style={styles.boxQuestion}>
-                                    <Text>
-
-                                    <Text style={styles.pmaTitle}>{item.question} - {item.answer} {"\n"}</Text>
-                                    <Text style={styles.pmaDescription}>{item.corpo}{"\n"}</Text>
-                                    <Text style={styles.pmaDescription}>{item.morada}{"\n"}</Text>
-                                    <Text style={styles.pmaDescription}>{item.contact}</Text>
-                                                                        
-                                    </Text>
-                                    
-
-
-                                </View>
-                                /*
                                 <React.Fragment key={index}>
 
                                     <View style={styles.boxQuestion}>
@@ -88,7 +75,7 @@ const PMAScreen = ({
                                         </View>
 
                                     }
-                                </React.Fragment> */
+                                </React.Fragment>
                             )
                         })
                     }
@@ -161,22 +148,6 @@ const styles = StyleSheet.create({
     answerBox: {
         backgroundColor: '#EDEDED',
         marginTop: 30,
-    },
-    pmaTitle: {
-        flex: 1,
-        flexDirection: 'row',
-        fontWeight: 'bold'
-    },
-    pmaDescription: {
-        flex: 1,
-        flexDirection: 'row'
-    },
-    baseText: {
-        fontFamily: 'Cochin',
-    },
-    titleText: {
-        fontSize: 20,
-        fontWeight: 'bold',
     },
 
 })
