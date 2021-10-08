@@ -54,22 +54,24 @@ const PMAScreen = ({
                     <Text style={styles.textData}>
                         CLÍNICAS DE PMA
                    </Text>
+                    <Text style={styles.baseText}>
+                        <Text style={styles.titleText} onPress={onPressTitle}>
+                            {titleText}
+                            {'\\n'}
+                            {'\\n'}
+                        </Text>
+                        <Text numberOfLines={5}>{bodyText}</Text>
+                    </Text>
                     {
 
 
                         questions.map((item, index) => {
                             return (
                                 <View style={styles.boxQuestion}>
-                                    <Text>
-
-                                    <Text style={styles.pmaTitle}>{item.question} - {item.answer} {"\n"}</Text>
-                                    <Text style={styles.pmaDescription}>{item.corpo}{"\n"}</Text>
-                                    <Text style={styles.pmaDescription}>{item.morada}{"\n"}</Text>
-                                    <Text style={styles.pmaDescription}>{item.contact}</Text>
-                                                                        
+                                    <Text style={styles.pmaTitle}>
+                                        {item.question} - {item.answer} {"\n"}
                                     </Text>
-                                    
-
+                                    <Text style={styles.pmaDescription}> {item.corpo}  </Text>
 
                                 </View>
                                 /*
@@ -173,11 +175,11 @@ const styles = StyleSheet.create({
     },
     baseText: {
         fontFamily: 'Cochin',
-    },
-    titleText: {
+      },
+      titleText: {
         fontSize: 20,
         fontWeight: 'bold',
-    },
+      },
 
 })
 

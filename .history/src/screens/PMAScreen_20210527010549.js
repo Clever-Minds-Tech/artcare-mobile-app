@@ -64,7 +64,6 @@ const PMAScreen = ({
 
                                     <Text style={styles.pmaTitle}>{item.question} - {item.answer} {"\n"}</Text>
                                     <Text style={styles.pmaDescription}>{item.corpo}{"\n"}</Text>
-                                    <Text style={styles.pmaDescription}>{item.morada}{"\n"}</Text>
                                     <Text style={styles.pmaDescription}>{item.contact}</Text>
                                                                         
                                     </Text>

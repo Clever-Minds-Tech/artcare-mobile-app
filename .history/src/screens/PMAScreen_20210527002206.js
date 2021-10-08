@@ -26,18 +26,14 @@ const PMAScreen = ({
     }, []);
 
     const loadData = async () => {
-        const response = await fetch(`https://mirthartcare.virtualcare.pt/artcare/CENTROSPMA/`);
+        const response = await fetch(`https://mirthartcare.virtualcare.pt/artcare/FAQ/`);
         const data = await response.json();
         const foo5 = Object.values(data.INFO)
         let items = [];
         foo5.map((item) => {
             let faqItem = {
-                question: item.SIGLA,
-                answer: item.DESCRICAO,
-                corpo: item.CORPO_CLINICO,
-                morada: item.MORADA,
-                contact: item.CONTATOS
-
+                question: item.PERGUNTA,
+                answer: item.RESPOSTA
             };
 
             items.push(faqItem);
@@ -52,27 +48,11 @@ const PMAScreen = ({
             <Content>
                 <View style={styles.container}>
                     <Text style={styles.textData}>
-                        CLÍNICAS DE PMA
+                        PERGUNTAS FREQUENTES
                    </Text>
                     {
-
-
                         questions.map((item, index) => {
                             return (
-                                <View style={styles.boxQuestion}>
-                                    <Text>
-
-                                    <Text style={styles.pmaTitle}>{item.question} - {item.answer} {"\n"}</Text>
-                                    <Text style={styles.pmaDescription}>{item.corpo}{"\n"}</Text>
-                                    <Text style={styles.pmaDescription}>{item.morada}{"\n"}</Text>
-                                    <Text style={styles.pmaDescription}>{item.contact}</Text>
-                                                                        
-                                    </Text>
-                                    
-
-
-                                </View>
-                                /*
                                 <React.Fragment key={index}>
 
                                     <View style={styles.boxQuestion}>
@@ -88,7 +68,7 @@ const PMAScreen = ({
                                         </View>
 
                                     }
-                                </React.Fragment> */
+                                </React.Fragment>
                             )
                         })
                     }
@@ -161,22 +141,6 @@ const styles = StyleSheet.create({
     answerBox: {
         backgroundColor: '#EDEDED',
         marginTop: 30,
-    },
-    pmaTitle: {
-        flex: 1,
-        flexDirection: 'row',
-        fontWeight: 'bold'
-    },
-    pmaDescription: {
-        flex: 1,
-        flexDirection: 'row'
-    },
-    baseText: {
-        fontFamily: 'Cochin',
-    },
-    titleText: {
-        fontSize: 20,
-        fontWeight: 'bold',
     },
 
 })

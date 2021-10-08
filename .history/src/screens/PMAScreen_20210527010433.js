@@ -54,6 +54,14 @@ const PMAScreen = ({
                     <Text style={styles.textData}>
                         CLÍNICAS DE PMA
                    </Text>
+                    <Text style={styles.baseText}>
+                        <Text style={styles.titleText} >
+                            Algum texto
+                            {"\n"}
+                            {'\\n'}
+                        </Text>
+                        <Text numberOfLines={5}>outro outro outro texto</Text>
+                    </Text>
                     {
 
 
@@ -62,10 +70,10 @@ const PMAScreen = ({
                                 <View style={styles.boxQuestion}>
                                     <Text>
 
-                                    <Text style={styles.pmaTitle}>{item.question} - {item.answer} {"\n"}</Text>
-                                    <Text style={styles.pmaDescription}>{item.corpo}{"\n"}</Text>
-                                    <Text style={styles.pmaDescription}>{item.morada}{"\n"}</Text>
-                                    <Text style={styles.pmaDescription}>{item.contact}</Text>
+                                    <Text style={styles.pmaTitle}>
+                                        {item.question} - {item.answer} {"\n"}
+                                        </Text>
+                                        <Text style={styles.pmaDescription}> {item.corpo}  </Text>
                                                                         
                                     </Text>
                                     
